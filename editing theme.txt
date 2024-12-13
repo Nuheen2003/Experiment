@@ -1,0 +1,26 @@
+///settings=editor.tokenColorCustomizations
+
+The scope used in settings.json must match the token VS Code assigns to System.out.println(). Here's how to identify it:
+
+Enable Inspect Token Scopes:
+
+Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P).
+Type and select "Developer: Inspect Editor Tokens and Scopes".
+Inspect the Text:
+
+Click on System.out.println() in your Java code.
+Look at the Scope displayed in the popup (e.g., it might show support.function.java or something else).
+Update the Scope in settings.json: Use the exact scope name in your settings.json file. For example:
+
+json
+Copy code
+"editor.tokenColorCustomizations": {
+  "textMateRules": [
+    {
+      "scope": "support.function.java", // Replace with the scope you found
+      "settings": {
+        "foreground": "#FFA500"
+      }
+    }
+  ]
+}
